@@ -1,0 +1,26 @@
+extends layout 
+
+block content 
+        
+    .welcome-box 
+        #menu-box 
+            a#odjava(href="/logout") Odjavite se 
+            a#odjava(href="/updateUser") Izmena podataka
+            a#odjava(href="/deleteUser") Brisanje naloga 
+        #main
+            h2 #{message}
+            h3 Ovo je Home Page
+            br
+            br
+            h3 Podaci korisnika: 
+            h4 Ime i prezime: &nbsp; #{fullname}
+            h4 Email adresa: &nbsp; #{email}
+            h4 Korisnicko ime: #{username}
+            img(src='#{image}' alt='Slika nedostupna' )
+
+            form(action='/store-image' method='POST' enctype='multipart/form-data')
+                label Store Image
+                br
+                br
+                input(type='file' name='image' multiple='')
+                button(type='submit') Upload Image

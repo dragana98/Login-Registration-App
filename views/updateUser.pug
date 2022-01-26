@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    h1#naslov= title
+    p#paragraf Dobrodošli na stranicu za izmenu podataka korisnika
+    br
+    #main
+        h3 Podaci korisnika: 
+        br
+        h4 Ime i prezime: #{fullname}
+        h4 Email: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #{email}
+        h4 Korisnicko ime: #{username}
+        h4 Fotografija: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #{image}
+        br
+        br
+        h3 Izmeni podatke:
+
+        form(action="/update/fullname", method="post")
+            .form-group
+                label(for="fullname") Ime i prezime
+                input(type="text" name="fullname" class="form-control")
+                button#register-btn(type="submit" class="btn btn-primary") Potvrdi izmene
+        form(action="/update/email", method="post")
+            .form-group
+                label(for="email") Email
+                input(type="email" name="email" class="form-control")
+                button#register-btn(type="submit" class="btn btn-primary") Potvrdi izmene
+        form(action="/update/username", method="post")
+            .form-group
+                label(for="username") Username
+                input(type="text" name="username" class="form-control")
+                button#register-btn(type="submit" class="btn btn-primary") Potvrdi izmene
+        form(action="/update/password", method="post")
+            .form-group
+                label(for="password") Trenutna lozinka
+                input(type="password" name="password" class="form-control")
+            .form-group
+                label(for="cpassword") Nova lozinka
+                input(type="password" name="cpassword" class="form-control")
+                button#register-btn(type="submit" class="btn btn-primary") Potvrdi izmene
+        form(action="/update/image", method="post")
+            .form-group
+                label(for="image") Fotografija
+                input(type="text" name="image" class="form-control")    
+                button#register-btn(type="submit" class="btn btn-primary") Potvrdi izmene
+            
+              

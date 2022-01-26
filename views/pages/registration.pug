@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+    #reg-main
+        .reg-box
+            .header
+                h2 Registracija
+            form(action="/auth_register", method="post")
+                .form-group
+                    label(for="fullname") Fullname
+                    input(type="text" name="fullname" class="form-control")
+                .form-group
+                    label(for="email") Email
+                    input(type="email" name="email" class="form-control")
+                .form-group
+                    label(for="username") Username
+                    input(type="text" name="username" class="form-control")
+                .form-group
+                    label(for="password") Password
+                    input(type="password" name="password" class="form-control")
+                .form-group
+                    label(for="cpassword") Confirm Password
+                    input(type="password" name="cpassword" class="form-control")
+                .form-group
+                    label(for="image") Image
+                    input(type="text" name="image" class="form-control")    
+                
+                button#register-btn(type="submit" class="btn btn-primary") Registruj se
